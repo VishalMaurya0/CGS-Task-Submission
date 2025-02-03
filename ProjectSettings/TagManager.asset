@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Wall
+  - Lava
+  - Coin
+  - Heart
+  - Moving Platform
+  - Lava3
+  - Checkpoint1
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Backgraund
+    uniqueID: 2047365339
+    locked: 0
+  - name: obstacle
+    uniqueID: 2646928137
+    locked: 0
+  - name: Platform
+    uniqueID: 3580239395
+    locked: 0
+  - name: Player
+    uniqueID: 2751812991
+    locked: 0
