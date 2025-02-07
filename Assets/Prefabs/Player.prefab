@@ -168,7 +168,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e39309a60cd50d47aa60be92c2c8f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpoint: 0
+  Checkpoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   moveSpeed: 40
+  currentVelocity: {x: 0, y: 0}
+  a: 0
+  b: 0
   Grounded: 2
   jumpForce: 35
   wallJumpForce: 25
@@ -176,11 +185,17 @@ MonoBehaviour:
   wallSlideSpeed: -4
   wallSlide: 0
   onWall: 0
-  totalHearts: 100
-  hearts: 100
+  onMovingPlatform: 0
+  totalHearts: 5
+  hearts: 5
+  coins: 0
   gracePeriod_damage: 0
+  camerA: {fileID: 0}
+  cameraShake: {fileID: 0}
   deathParticleSys: {fileID: 0}
   damageParticleSys: {fileID: 4461248412339490540}
+  coinParticleSys: {fileID: 0}
+  trailParticle: {fileID: 0}
 --- !u!50 &5293472655321365339
 Rigidbody2D:
   serializedVersion: 4
