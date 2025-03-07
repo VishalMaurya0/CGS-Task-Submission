@@ -34,7 +34,7 @@ public class bomb : MonoBehaviour
         bombToDestroy.SetActive(true);
         Rigidbody2D rb = bombToDestroy.GetComponent<Rigidbody2D>();
 
-        rb.velocity = (Vector3.Normalize(dir1.transform.position - transform.position))*speed;
+        rb.linearVelocity = (Vector3.Normalize(dir1.transform.position - transform.position))*speed;
         StartCoroutine(Timer(timer));
     }
 }

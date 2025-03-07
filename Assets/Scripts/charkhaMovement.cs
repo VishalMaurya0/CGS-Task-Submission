@@ -38,14 +38,14 @@ public class charkhaMovement : MonoBehaviour
 
         if (goForward)
         {
-            rb.velocity = (pathFinalPoint - pathInitialPoint) / Vector3.Distance(pathFinalPoint, pathInitialPoint) * speed;
+            rb.linearVelocity = (pathFinalPoint - pathInitialPoint) / Vector3.Distance(pathFinalPoint, pathInitialPoint) * speed;
             if (Vector3.Distance(mainBody.gameObject.transform.position, pathInitialPoint) > Vector3.Distance(pathFinalPoint, pathInitialPoint))
             { goForward = false; }
         }
 
         if (!goForward)
         {
-            rb.velocity = -(pathFinalPoint - pathInitialPoint) / Vector3.Distance(pathFinalPoint, pathInitialPoint) * speed;
+            rb.linearVelocity = -(pathFinalPoint - pathInitialPoint) / Vector3.Distance(pathFinalPoint, pathInitialPoint) * speed;
             if (Vector3.Distance(mainBody.gameObject.transform.position, pathFinalPoint) > Vector3.Distance(pathInitialPoint, pathFinalPoint))
             { goForward = true; }
         }

@@ -58,14 +58,14 @@ public class MovingPlatform : MonoBehaviour
         {
                 rb.AddForce((pathFinalPoint - mainBody.transform.position) / Vector3.Distance(pathFinalPoint, mainBody.transform.position) * force * Time.deltaTime * 165);
 
-            if (rb.velocity.magnitude > speed)
+            if (rb.linearVelocity.magnitude > speed)
             {
-                rb.velocity = (rb.velocity/rb.velocity.magnitude)*speed;
+                rb.linearVelocity = (rb.linearVelocity/rb.linearVelocity.magnitude)*speed;
             }
             if (Vector3.Distance(mainBody.gameObject.transform.position, pathInitialPoint) > Vector3.Distance(pathFinalPoint, pathInitialPoint))
             { 
                 goForward = false;
-                rb.velocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero;
             }
         }
         
@@ -73,14 +73,14 @@ public class MovingPlatform : MonoBehaviour
         {
                 rb.AddForce((pathInitialPoint - mainBody.transform.position) / Vector3.Distance(pathInitialPoint, mainBody.transform.position) * force * Time.deltaTime * 165);
 
-            if (rb.velocity.magnitude > speed)
+            if (rb.linearVelocity.magnitude > speed)
             {
-                rb.velocity = (rb.velocity / rb.velocity.magnitude) * speed;
+                rb.linearVelocity = (rb.linearVelocity / rb.linearVelocity.magnitude) * speed;
             }
             if (Vector3.Distance(mainBody.gameObject.transform.position, pathFinalPoint) > Vector3.Distance(pathInitialPoint, pathFinalPoint))
             {   
                 goForward = true;
-                rb.velocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero;
             }
         }
     }
@@ -101,13 +101,13 @@ public class MovingPlatform : MonoBehaviour
 
     void PlayerCollided()
     {
-        if (rb.velocity.x > 0)
+        if (rb.linearVelocity.x > 0)
         {
-            if (rb2.velocity.x < rb.velocity.x)
+            if (rb2.linearVelocity.x < rb.linearVelocity.x)
                 rb2.AddForce(new Vector2(playerForce * Time.deltaTime * 165, 0));
-        }else if(rb.velocity.x < 0)
+        }else if(rb.linearVelocity.x < 0)
         {
-            if (rb2.velocity.x > rb.velocity.x)
+            if (rb2.linearVelocity.x > rb.linearVelocity.x)
                 rb2.AddForce(new Vector2(-playerForce * Time.deltaTime * 165, 0));
         }
     }

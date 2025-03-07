@@ -149,7 +149,7 @@ public class Player_controller : MonoBehaviour
         {
             anim.SetBool("death", true);
             trailParticle.gameObject.SetActive(false);
-            rb.velocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
             deathParticleSys.gameObject.SetActive(true);
             damageParticleSys.gameObject.SetActive(false);
             deathParticleSys.gameObject.transform.localPosition = this.gameObject.transform.localPosition - new Vector3(0,0.8f,0);
@@ -165,11 +165,11 @@ public class Player_controller : MonoBehaviour
             anim.SetBool("falling", false);
             anim.SetBool("jumping", false);
         }
-        if (rb.velocity.y<-.01)
+        if (rb.linearVelocity.y<-.01)
         {
             anim.SetBool("jumping", false);
             anim.SetBool("falling", true);
-        }else if(rb.velocity.y>.01)
+        }else if(rb.linearVelocity.y>.01)
         {
             anim.SetBool("falling", false);
         }
@@ -204,7 +204,7 @@ public class Player_controller : MonoBehaviour
         {
             if (!onWall && Grounded >= 1)                                     //------------wall jump------------------//
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 Grounded--;
                 anim.SetBool("jumping", true);
             }
@@ -214,17 +214,17 @@ public class Player_controller : MonoBehaviour
             }
         }
 
-        if (rb.velocity.y < -.01 && wallSlide)              //------------------wall slide----------------//
+        if (rb.linearVelocity.y < -.01 && wallSlide)              //------------------wall slide----------------//
         {
              rb.gravityScale = 0;
-             rb.velocity = new Vector2(rb.velocity.x, wallSlideSpeed);
+             rb.linearVelocity = new Vector2(rb.linearVelocity.x, wallSlideSpeed);
         }
         else { rb.gravityScale = 10; }
 
         
         
-        rb.velocity = rb.velocity + new Vector2(x * moveSpeed * Time.deltaTime, 0);                  //---------------------movement----------------//
-        currentVelocity= rb.velocity;
+        rb.linearVelocity = rb.linearVelocity + new Vector2(x * moveSpeed * Time.deltaTime, 0);                  //---------------------movement----------------//
+        currentVelocity= rb.linearVelocity;
                   
 
     }

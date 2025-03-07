@@ -29,7 +29,7 @@ public class lava : MonoBehaviour
         if (player != null) 
         {
             rb.gravityScale = 0;
-            rb.velocity = new Vector2(0,-1)*speed;
+            rb.linearVelocity = new Vector2(0,-1)*speed;
         }
     }
 
