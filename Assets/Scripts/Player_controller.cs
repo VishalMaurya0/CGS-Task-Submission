@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player_controller : MonoBehaviour
 {
     public int checkpoint;
+    public bool loadFromCheckpoint;
     public GameObject[] Checkpoints;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Vector2 currentVelocity;
@@ -42,7 +43,10 @@ public class Player_controller : MonoBehaviour
 
     void Start()
     {
-        checkpoint = (int)Variables.Saved.Get("Checkpoint");
+        //if (initialCheckpoint_neg1 == -1)
+            checkpoint = (int)Variables.Saved.Get("Checkpoint");
+        //else
+            //checkpoint = initialCheckpoint_neg1;
 
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -53,7 +57,8 @@ public class Player_controller : MonoBehaviour
         emmision.rateOverTime = 0;
         cameraShake = camerA.GetComponent<cameraShake>();
 
-        GoToCheckpoint();
+        if (loadFromCheckpoint)
+            GoToCheckpoint();
     }
 
     void Update()
