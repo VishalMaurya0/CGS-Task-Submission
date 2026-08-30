@@ -264,7 +264,7 @@ public class Player_controller : MonoBehaviour
     IEnumerator AfterDeathWait()
     {      
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void GoToCheckpoint()
